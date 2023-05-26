@@ -21,4 +21,6 @@
 
     type JSON = 'josn'
     const json: JSON = 'josn' // => 위와 마찬가지로 할당된 josn만 사용가능!
+
+    type Boal = true;
 }
