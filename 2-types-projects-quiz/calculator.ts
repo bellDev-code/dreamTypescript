@@ -14,6 +14,8 @@ function calculate(str: Command, x: number, y: number):number {
             return x / y;
         case 'remainder':
             return x % y;
+        default: 
+            throw new Error('no Command')
     }
 }
 
