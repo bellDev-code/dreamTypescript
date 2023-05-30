@@ -17,11 +17,11 @@ function move(str: Moving) {
             return position.y -= 1
         break;
         case 'left':
-            return position.x += -1
+            return position.x -= 1
         break;
         case 'right':
-            return position.x -= -1
-        break
+            return position.x += 1
+        break;
         default: throw new Error('no position')
     }
 }
