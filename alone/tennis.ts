@@ -1,30 +1,50 @@
-{
-    // 테니스 oop 구현
-    type Game = {
-        score: number;
+type Game = {
+    point: number;
+    result: boolean;
+}
+
+interface GameStart {
+    playTennis(point: number): Game
+}
+
+class PlayTennis implements GameStart {
+    private score: number = 0;
+    
+    constructor(score: number) {
+        this.score = score
     }
 
-    class TennisGame {
-        static winnerPoint: number = 15;
-        static endScore: number = 40;
-        score: number = 0
+    static playGame(score: number) {
+        return new PlayTennis(score);
+    }
 
-        constructor(score: number) {
-            this.score = score
-        }
+    winnerPoint(): Game {
+        this.score += 15;
 
-        static playTennis(score: number): Game {
-            return new TennisGame(score)
-        }
-
-        winnerPoint(score: number): Game {
-            if(this.score > TennisGame.endScore) {
-                console.log('게임 종료')
-            }
-            this.score += score + TennisGame.winnerPoint;
+        if (this.score > 40) {
+            this.score = 40;
             return {
-                score,
+                point: this.score,
+                result: true
             }
+        } else {
+            return {
+                point: this.score,
+                result: false
+            }
+        }
+    }
+
+    playTennis(point: number) {
+        const winner = this.winnerPoint()
+        return {
+            point: winner.point,
+            result: winner.result
         }
     }
 }
+
+const tennis = new PlayTennis(0);
+console.log(tennis.playTennis(0));
+console.log(tennis.playTennis(0));
+console.log(tennis.playTennis(0));
