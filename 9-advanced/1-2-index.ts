@@ -18,7 +18,7 @@
         gender: Animal['gender']
     }
 
-    const person = {
+    const person: Person = {
         name: 'jongho',
         gender: 'male'
     }
