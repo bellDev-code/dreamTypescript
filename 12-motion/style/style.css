@@ -107,3 +107,7 @@
     border-top: 1px solid var(--border-color);
     text-align: center;
   }
+
+  .image__thumbnail {
+    width: 300px;
+  }
