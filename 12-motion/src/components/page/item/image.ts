@@ -15,8 +15,4 @@ export class ImageComponent extends BaseComponent<HTMLElement> {
         titleElement.textContent = title;
 
     }
-
-    attachTo(parent: HTMLElement, position: InsertPosition = 'afterbegin') {
-        parent.insertAdjacentElement(position, this.element)
-    }
 }
