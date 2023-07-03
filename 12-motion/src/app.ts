@@ -3,6 +3,7 @@ import { MediaSectionInput } from "./components/dialog/input/media-input.js";
 import { TextSectionInput } from "./components/dialog/input/text-input.js";
 import { ImageComponent } from "./components/page/item/image.js";
 import { NoteComponent } from "./components/page/item/note.js";
+import { TodoComponent } from "./components/page/item/todo.js";
 import { VideoComponent } from "./components/page/item/video.js";
 import { Composable, PageComponent, PageItemComponent } from "./components/page/page.js";
 
@@ -77,7 +78,7 @@ class App {
             });
             dialog.setOnSubmitListenr(() => {
             // 섹션을 만들어서 페이지에 추가 해준다
-            const image = new NoteComponent(inputSection.title, inputSection.body);
+            const image = new TodoComponent(inputSection.title, inputSection.body);
             this.page.addChild(image)
             dialog.removeFrom(dialogRoot);
         });
